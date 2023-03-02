@@ -1,0 +1,132 @@
+<html>
+<head>
+
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+
+<style>
+.maindiv{
+	    display: flex;
+	    flex-direction: column-reverse;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+        max-width: 700px;
+    min-height: 450px;
+}
+
+
+.innerdiv{
+	width: 100%;
+	    position: relative;
+    min-height: 1px;
+    display: flex;
+}
+
+
+.divborder{
+	    align-content: center;
+    align-items: center;
+    border-radius: 15px 15px 15px 15px;
+    border-style: solid;
+    border-width: 18px 0px 0px 0px;
+    border-color: #94281D;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 50%);
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+.imagebox{
+	margin: -15% 0% 0% 0%;
+}
+
+.errorheading{
+	    color: #94281D;
+    font-family: "Poppins", Sans-serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 42px
+    text-align: center;
+}
+
+#amount {
+    font-family: Poppins, sans-serif;
+    font-size: 29px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 49.3px;
+    text-decoration: none solid rgb(0, 0, 0);
+    text-align: center;}
+
+
+.borderdivider{
+	border: solid #94281D 2.5px;
+    width: 40%;
+}
+
+.gobackhome{
+    background-color: #94281D;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    margin: 140px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+
+<div class="maindiv">
+<div class="innerdiv">
+<div class="divborder">
+
+
+<div class="imagebox">
+	
+	<img width="512" height="512" src="fail.png" style="width:100%;height:100%;max-width:150px;">
+
+</div>
+<h1 class="errorheading">Error!</h1>
+
+
+<span class="borderdivider">
+						</span>
+
+
+<div class="successtext">
+			<p id="amount">Unfortunately we have an issue with your payment, try again later.</p></div>
+            <a class="gobackhome" onclick="redirectTo();">Go back to Home</a>
+
+</div>
+</div>
+</div>	
+
+
+
+
+<script>
+    function redirectTo(){
+        window.location.href=localStorage.getItem("siteUrl");
+
+}
+</script>
+</body>
+
+
+</html>
