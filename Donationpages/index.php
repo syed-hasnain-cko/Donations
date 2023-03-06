@@ -207,30 +207,43 @@ input#amount:before {
     <script>
 
       // validate all fields before showing checkout form
-$(document).ready(function(){
+      $(document).ready(function(){
 
 var input = document.querySelector("#phone");
 window.intlTelInput(input,({
+  // options here
 }));
 
 // jQuery 
 $("#phone").intlTelInput({
+  // options here
 });
+
+
+
+        // setInterval(function(){ 
       function checkInputs() {
         console.log('right');
   var isValid = true;
   $('form#payment-form input').filter('[required]').each(function() {
     if ($(this).val() === '') {
       $('.checkout-form .group button#pay-button').prop('disabled', true)
-       $('form#payment-form .checkout-form').hide();
+       
+
+      // $('button#mas_showard').removeClass('mas_showcarddetails');
+      $('button#mas_showard.mas_showcarddetails').show();
       $('button#mas_showard').removeClass('mas_showcarddetails');
+      $('form#payment-form .checkout-form').hide();
+
       isValid = false;
       return false;
+      
     }
   });
   if(isValid) {
+    $('.checkout-form .group button#pay-button').prop('disabled', false)
+    // $('.container .checkout-form').show();
     $('button#mas_showard').addClass('mas_showcarddetails');
-    $('.checkout-form .group button#pay-button').prop('disabled', false)  
     $('.mas_showcarddetails').click(function() {
   console.log('in');
     $('form#payment-form .checkout-form').show();
@@ -245,8 +258,9 @@ $("#phone").intlTelInput({
 
 
 $('.checkout-form .group button#pay-button').click(function() {
+  // alert(checkInputs());
 });
-
+var intervalId = window.setInterval(function(){
 //Enable or disable button based on if inputs are filled or not
 $('form#payment-form input').filter('[required]').on('keyup',function() {
 checkInputs()
@@ -254,6 +268,7 @@ checkInputs()
 
 checkInputs()
 
+ }, 100);
 
 });
 
